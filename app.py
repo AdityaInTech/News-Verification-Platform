@@ -7,8 +7,13 @@ from nltk.corpus import stopwords
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 
-app = Flask(__name__)
-
+# app = Flask(__name__)
+import os
+app = Flask(
+    __name__,
+    template_folder=os.getcwd(),  # index.html is here
+    static_folder=os.getcwd()     # style.css & script.js are here
+)
 
 # Load trained model and vectorizer
 
